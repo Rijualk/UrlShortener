@@ -9,7 +9,7 @@ const app = express();
 connectDb();
 app.use(
     cors({
-      origin: ["https://url-shortener-liart-phi.vercel.app/"],
+      origin: ["https://url-shortener-liart-phi.vercel.app"],
       methods:["GET","POST"],
       credentials: true,
     })
