@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const connectDb=()=>{
-    mongoose.connect(process.env.MONGO_URI)
+    mongoose.connect(process.env.MONGO_URI+"/urlShortener")
       .then(() => {
         console.log("mongodb connected");
       })

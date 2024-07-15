@@ -2,8 +2,9 @@ const urlCollection = require("../models/UrlModel");
 const generateShortUrl = require("../utils/generateUrl");
 
 const urlShorten=async(req,res)=>{
+    console.log(req.body);
     try{
-        const {originalUrl}=req.body;
+        const originalUrl=req.body.URL;
         
         // if url is not found
         if(!originalUrl){
