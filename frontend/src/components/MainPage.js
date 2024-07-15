@@ -16,7 +16,7 @@ const MainPage = () => {
     if (first) {
       await axios
         .post(
-          "https://url-shortener-backend-orcin.vercel.app/url",
+          "https://url-shortener-backend-taupe.vercel.app/",
           { URL },
           {
             withCredentials: true,
