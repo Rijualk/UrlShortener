@@ -12,10 +12,11 @@ const MainPage = () => {
   };
 
   const fetchUrl = async () => {
+    axios.defaults.withCredentials=true;
     if (first) {
       await axios
         .post(
-          "http://localhost:8080/url",
+          "https://url-shortener-backend-orcin.vercel.app/url",
           { URL },
           {
             withCredentials: true,
@@ -35,7 +36,7 @@ const MainPage = () => {
   };
 
   const handleCopyBtn = () => {
-    let copyText = "http://localhost:8080/" + shortUrl;
+    let copyText = "https://url-shortener-backend-orcin.vercel.app/" + shortUrl;
     navigator.clipboard.writeText(copyText);
     setToggleCopyButton(true);
   };
