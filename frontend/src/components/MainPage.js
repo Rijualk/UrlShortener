@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import axios from "axios";
 const MainPage = () => {
   const [URL, setURL] = useState("");
   const [shortUrl, setShortUrl] = useState("");
   const [toggleCopyButton, setToggleCopyButton] = useState(false);
   const [toggleDisplayShortUrl, setToggleDisplayShortUrl] = useState(false);
-  const [first, setFirst] = useState(true);
 
   const handleOnChange = (e) => {
     setURL(e.target.value);
@@ -13,7 +12,9 @@ const MainPage = () => {
 
   const fetchUrl = async () => {
     axios.defaults.withCredentials=true;
-    if (first) {
+    try{
+
+    
       await axios
         .post(
           "https://url-shortener-backend-taupe.vercel.app/url",
@@ -32,6 +33,9 @@ const MainPage = () => {
           setShortUrl(data.shortUrl);
         });
       setToggleDisplayShortUrl(true);
+    }
+    catch(error){
+      console.log(error);
     }
   };
 
@@ -72,7 +76,7 @@ const MainPage = () => {
           </h3>
           <button
             onClick={toggleDisplayShortUrl ? handleCopyBtn : null}
-            className="text-lg  w-[22%] py-3 px-7 bg-blue-700  rounded-lg hover:bg-blue-800"
+            className="text-lg  w-[22%] py-3 px-7 bg-blue-700  rounded-lg hover:bg-blue-800 items-stretch"
           >
             {toggleCopyButton ? "Copied !" : "Copy"}
           </button>
