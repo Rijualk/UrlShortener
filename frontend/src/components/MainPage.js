@@ -67,7 +67,7 @@ const MainPage = () => {
           <h3 className="text-base p-3 w-2/3">
             Short URL :{" "}
             {toggleDisplayShortUrl
-              ? `http://localhost:8080/${shortUrl}`
+              ? `https://url-shortener-backend-taupe.vercel.app/${shortUrl}`
               : "Your Short Url will appear here"}
           </h3>
           <button
