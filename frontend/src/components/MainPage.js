@@ -16,7 +16,7 @@ const MainPage = () => {
     if (first) {
       await axios
         .post(
-          "https://url-shortener-backend-taupe.vercel.app/",
+          "https://url-shortener-backend-taupe.vercel.app/url",
           { URL },
           {
             withCredentials: true,
@@ -36,7 +36,7 @@ const MainPage = () => {
   };
 
   const handleCopyBtn = () => {
-    let copyText = "https://url-shortener-backend-orcin.vercel.app/" + shortUrl;
+    let copyText = "https://url-shortener-backend-taupe.vercel.app/" + shortUrl;
     navigator.clipboard.writeText(copyText);
     setToggleCopyButton(true);
   };
